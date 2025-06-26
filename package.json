@@ -1,0 +1,24 @@
+{
+  "name": "marcus-faulkner-portfolio",
+  "version": "1.0.0",
+  "description": "Professional portfolio website showcasing medical device and manufacturing expertise",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python3 -m http.server 3000",
+    "start": "python3 -m http.server 3000",
+    "build": "echo 'Static site - no build needed'",
+    "preview": "python3 -m http.server 4173"
+  },
+  "keywords": [
+    "portfolio",
+    "medical-device",
+    "manufacturing",
+    "intuitive-surgical",
+    "nuvasive",
+    "alphatec"
+  ],
+  "author": "Marcus Faulkner",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {}
+}
