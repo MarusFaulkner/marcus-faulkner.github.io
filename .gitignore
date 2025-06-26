@@ -30,33 +30,9 @@ dist-ssr
 .env.test.local
 .env.production.local
 
-# Build outputs
-build/
-out/
+# Build files
+/build
 
-# Dependencies
-node_modules/
-.pnp
-.pnp.js
-
-# Testing
-coverage/
-
-# Misc
-.DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-
-# OS generated files
-Thumbs.db
-ehthumbs.db
-Desktop.ini
+# Temporary files
+.tmp
+.temp
