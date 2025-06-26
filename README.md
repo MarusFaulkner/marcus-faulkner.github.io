@@ -1,66 +1,180 @@
-# Marcus Faulkner - Professional Portfolio
+# Patient Health Tracker
 
-A modern, responsive portfolio website showcasing Marcus Faulkner's expertise in medical device technology and manufacturing operations.
+A modern, responsive React application for tracking patient health metrics with real-time monitoring and comprehensive analytics.
 
-## About Marcus
+## Features
 
-Marcus Faulkner is a Service Operations Technician II at Intuitive Surgical with extensive experience in:
+### 🏥 Patient Management
+- **Patient Dashboard**: Comprehensive overview of all patients with status indicators
+- **Individual Patient Profiles**: Detailed patient information including vitals, medical history, and medications
+- **Search & Filter**: Advanced filtering by patient status, name, and ID
+- **Real-time Status Updates**: Live monitoring of patient conditions
 
-- **Robotic Surgery Systems**: 3+ years specializing in da Vinci robotic system maintenance and diagnostics
-- **Medical Device Manufacturing**: Experience across Intuitive Surgical, NuVasive, and Alphatec Spine
-- **Quality Compliance**: GDP standards implementation and process improvement
-- **Manufacturing Foundation**: Statistical Process Control and reliability auditing at Electrolux North America
+### 📊 Health Analytics
+- **Vital Signs Monitoring**: Track heart rate, blood pressure, temperature, and oxygen saturation
+- **Interactive Charts**: Real-time data visualization using Recharts
+- **Trend Analysis**: Historical data tracking and pattern recognition
+- **Custom Dashboards**: Personalized views for different medical departments
 
-## Professional Experience
+### 🔔 Alert System
+- **Critical Alerts**: Immediate notifications for emergency situations
+- **Customizable Notifications**: Email, SMS, and push notification preferences
+- **Alert History**: Complete audit trail of all system alerts
+- **Escalation Protocols**: Automated alert routing based on severity
 
-### Current Role
-**Service Operations Technician II - Intuitive Surgical** (February 2022 - Present)
-- Enhanced GDP standard adherence by 30%
-- Improved equipment diagnostic efficiency by 25%
-- Maintains world's most advanced robotic surgical systems
+### 📈 Reporting & Analytics
+- **Patient Growth Trends**: Monthly enrollment and demographic analysis
+- **Status Distribution**: Visual breakdown of patient conditions
+- **Age Group Analytics**: Demographic insights for targeted care
+- **Recovery Rate Tracking**: Treatment effectiveness metrics
 
-### Previous Experience
-- **Medical Device Technician - Alphatec Spine** (2021-2022)
-- **Loaner Processing Technician - NuVasive** (2018-2021)
-- **Reliability Lab Auditor - Electrolux North America** (2013-2017)
-- **Senior Checker Sorter - FedEx Express** (2000-2012)
+### ⚙️ System Management
+- **User Profile Management**: Complete user account customization
+- **Security Settings**: Two-factor authentication and session management
+- **Data Privacy Controls**: HIPAA-compliant data handling and export
+- **System Configuration**: Appearance, notifications, and regional settings
 
-## Key Achievements
+## Technology Stack
 
-- 30% improvement in GDP standards compliance
-- 25% increase in diagnostic efficiency
-- 20% improvement in shipment accuracy at NuVasive
-- 15% reduction in testing cycle time at Electrolux
+### Frontend
+- **React 18**: Modern React with hooks and functional components
+- **React Router**: Client-side routing for single-page application
+- **Tailwind CSS**: Utility-first CSS framework for rapid UI development
+- **Lucide React**: Beautiful, customizable SVG icons
+- **Recharts**: Responsive chart library for data visualization
 
-## Community Leadership
+### Development Tools
+- **Vite**: Fast build tool and development server
+- **ESLint**: Code linting for consistent code quality
+- **PostCSS**: CSS processing with Autoprefixer
+- **Modern JavaScript**: ES6+ features and modules
 
-- **Leadership Memphis Program**: Active participant in premier professional development program
-- **STEM Education Advocate**: Represents Intuitive Surgical at high school career fairs
-- **Community Engagement**: Building networks that drive positive change in Memphis region
+## Getting Started
 
-## Technical Skills
+### Prerequisites
+- Node.js 16.0 or higher
+- npm or yarn package manager
 
-- da Vinci Robotic Surgery Systems
-- Statistical Process Control (SPC)
-- Good Distribution Practice (GDP) Standards
-- Medical Device Quality Compliance
-- Lean Manufacturing & 5S Methodology
-- Electronic & Electro-mechanical Systems
+### Installation
 
-## Education & Certifications
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/MarusFaulkner/patient-health-tracker.git
+   cd patient-health-tracker
+   ```
 
-- BS Information Systems & Cybersecurity
-- Manufacturing Certifications
-- OSHA Certified
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-## Location
+3. **Start the development server**
+   ```bash
+   npm run dev
+   ```
 
-Memphis Metropolitan Area, Tennessee
+4. **Open your browser**
+   Navigate to `http://localhost:3000` to view the application
 
-## Contact
+### Build for Production
 
-Ready for new opportunities and exciting challenges in medical device technology and manufacturing operations.
+```bash
+npm run build
+```
+
+The built files will be in the `dist` directory, ready for deployment.
+
+## Project Structure
+
+```
+src/
+├── components/          # Reusable UI components
+│   ├── Layout.jsx      # Main application layout
+│   ├── Header.jsx      # Navigation header
+│   ├── Sidebar.jsx     # Navigation sidebar
+│   ├── MetricCard.jsx  # Health metric display cards
+│   ├── PatientCard.jsx # Patient information cards
+│   └── VitalChart.jsx  # Chart components for vitals
+├── pages/              # Main application pages
+│   ├── Dashboard.jsx   # Main dashboard overview
+│   ├── Patients.jsx    # Patient management page
+│   ├── PatientDetail.jsx # Individual patient details
+│   ├── Analytics.jsx   # Analytics and reporting
+│   └── Settings.jsx    # Application settings
+├── App.jsx             # Main application component
+├── main.jsx           # Application entry point
+└── index.css          # Global styles and Tailwind imports
+```
+
+## Key Features Explained
+
+### Dashboard Overview
+The main dashboard provides a comprehensive view of:
+- Total patient count with growth trends
+- Active monitoring cases
+- Critical alerts requiring immediate attention
+- System status and health metrics
+
+### Patient Management
+- **Patient Cards**: Visual representation of each patient with key information
+- **Status Indicators**: Color-coded status (Stable, Monitoring, Critical)
+- **Quick Actions**: Direct access to patient details and common tasks
+- **Search Functionality**: Real-time search across patient names and IDs
+
+### Health Monitoring
+- **Real-time Vitals**: Live tracking of essential health metrics
+- **Historical Trends**: Chart-based visualization of patient data over time
+- **Alert Thresholds**: Configurable limits for automatic alert generation
+- **Multi-patient Monitoring**: Simultaneous tracking of multiple patients
+
+### Analytics & Reporting
+- **Growth Analytics**: Patient enrollment trends and demographic analysis
+- **Status Distribution**: Visual breakdown of patient conditions
+- **Age Demographics**: Insights into patient age groups for targeted care
+- **Performance Metrics**: Treatment effectiveness and recovery rates
+
+## Medical Device Integration
+
+This application is designed with medical device compatibility in mind, reflecting Marcus Faulkner's extensive experience in:
+
+- **Robotic Surgery Systems**: Integration patterns suitable for da Vinci system data
+- **Medical Device Standards**: HIPAA compliance and medical data security
+- **Quality Assurance**: Built-in validation and error handling
+- **Manufacturing Principles**: Lean development practices and quality control
+
+## Security & Compliance
+
+- **Data Privacy**: HIPAA-compliant data handling and storage
+- **User Authentication**: Secure login with two-factor authentication support
+- **Session Management**: Automatic session timeout and security monitoring
+- **Audit Trails**: Complete logging of all user actions and data access
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Author
+
+**Marcus Faulkner**
+- Medical Device & Manufacturing Specialist
+- Service Operations Technician II at Intuitive Surgical
+- Expert in robotic surgery systems and healthcare technology
+
+## Acknowledgments
+
+- Built with modern React and Tailwind CSS
+- Charts powered by Recharts library
+- Icons provided by Lucide React
+- Inspired by real-world medical device applications and healthcare workflows
 
 ---
 
-*This portfolio showcases a proven track record of excellence in medical device operations, from manufacturing foundations to cutting-edge robotic surgery systems.*
+*This application demonstrates modern web development practices applied to healthcare technology, reflecting the intersection of software engineering and medical device expertise.*
