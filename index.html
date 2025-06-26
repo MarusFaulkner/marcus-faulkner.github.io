@@ -56,8 +56,7 @@
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 1.5rem;
-            flex-wrap: wrap;
+            gap: 2rem;
         }
 
         .nav-links a {
@@ -66,9 +65,8 @@
             font-weight: 500;
             transition: all 0.3s ease;
             position: relative;
-            padding: 0.5rem 0.8rem;
+            padding: 0.5rem 1rem;
             border-radius: 25px;
-            font-size: 0.9rem;
         }
 
         .nav-links a:hover {
@@ -157,7 +155,6 @@
             gap: 3rem;
             margin: 2rem 0;
             animation: slideInFromBottom 1s ease 1.2s both;
-            flex-wrap: wrap;
         }
 
         .hero-stat {
@@ -168,7 +165,6 @@
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
             transition: transform 0.3s ease;
-            min-width: 120px;
         }
 
         .hero-stat:hover {
@@ -322,6 +318,12 @@
         .expertise-card:hover .expertise-icon {
             transform: rotate(360deg) scale(1.1);
             box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+        }
+
+        .expertise-icon svg {
+            width: 32px;
+            height: 32px;
+            fill: white;
         }
 
         .expertise-card h3 {
@@ -618,68 +620,106 @@
             box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
         }
 
-        .photo-grid {
+        /* Alphatec Section Enhancements */
+        .alphatec-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .alphatec-intro {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 4rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .alphatec-gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 4rem;
         }
 
-        .photo-card {
+        .alphatec-photo-card {
             background: white;
-            border-radius: 15px;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
         }
 
-        .photo-card:hover {
+        .alphatec-photo-card:hover {
             transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
         }
 
-        .photo-card img {
+        .alphatec-photo-card img {
             width: 100%;
-            height: 250px;
+            height: 300px;
             object-fit: cover;
             transition: transform 0.3s ease;
         }
 
-        .photo-card:hover img {
+        .alphatec-photo-card:hover img {
             transform: scale(1.05);
         }
 
-        .photo-card-content {
-            padding: 1.5rem;
+        .alphatec-photo-card .card-content {
+            padding: 2rem;
         }
 
-        .photo-card h4 {
-            margin-bottom: 0.5rem;
+        .alphatec-photo-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
             color: #2c3e50;
-            font-size: 1.2rem;
-        }
-
-        .photo-card p {
-            color: #666;
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        .startup-badge {
-            display: inline-block;
-            background: linear-gradient(45deg, #28a745, #20c997);
-            color: white;
-            padding: 0.3rem 0.8rem;
-            border-radius: 15px;
-            font-size: 0.8rem;
             font-weight: 600;
-            margin-bottom: 1rem;
         }
 
-        .company-logo {
-            max-height: 40px;
+        .alphatec-photo-card p {
+            color: #666;
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        .alphatec-highlight {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 3rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 3rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .alphatec-highlight::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        .alphatec-highlight h3 {
+            font-size: 1.8rem;
             margin-bottom: 1rem;
-            opacity: 0.8;
+            position: relative;
+            z-index: 2;
+        }
+
+        .alphatec-highlight p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 2;
         }
 
         @keyframes float {
@@ -809,7 +849,7 @@
                 grid-template-columns: 1fr;
             }
 
-            .photo-grid {
+            .alphatec-gallery {
                 grid-template-columns: 1fr;
             }
         }
@@ -824,9 +864,9 @@
                 <li><a href="#expertise">Expertise</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#manufacturing-foundation">Manufacturing</a></li>
-                <li><a href="#alphatec-startup">Alphatec Startup</a></li>
-                <li><a href="#nuvasive-work">NuVasive</a></li>
-                <li><a href="#intuitive-work">Intuitive</a></li>
+                <li><a href="#nuvasive-work">NuVasive Work</a></li>
+                <li><a href="#alphatec-work">Alphatec Work</a></li>
+                <li><a href="#intuitive-work">Intuitive Work</a></li>
                 <li><a href="#leadership">Leadership</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -843,17 +883,13 @@
         <div class="hero-content">
             <h1>Marcus Faulkner</h1>
             <h2>Medical Device & Manufacturing Specialist</h2>
-            <p>🤖 Robotic Surgery Systems Expert • 🏥 Multi-Company Medical Device Experience • 📊 Quality Compliance Leader</p>
-            <p>Proven expertise across Intuitive Surgical, NuVasive, Alphatec Spine startup, and manufacturing operations</p>
+            <p>Robotic Surgery Systems Expert • Service Operations Excellence • Quality Compliance Leader</p>
+            <p>Proven track record in da Vinci surgical systems, spine instruments, and manufacturing operations</p>
             
             <div class="hero-stats">
                 <div class="hero-stat">
                     <div class="hero-stat-number">3+</div>
                     <div class="hero-stat-label">Years at Intuitive</div>
-                </div>
-                <div class="hero-stat">
-                    <div class="hero-stat-number">4</div>
-                    <div class="hero-stat-label">Medical Device Companies</div>
                 </div>
                 <div class="hero-stat">
                     <div class="hero-stat-number">30%</div>
@@ -865,43 +901,67 @@
                 </div>
             </div>
             
-            <a href="#contact" class="cta-button pulse-animation">🚀 Let's Connect</a>
+            <a href="#contact" class="cta-button pulse-animation">Let's Connect</a>
         </div>
     </section>
 
     <section id="expertise">
         <div class="container">
-            <h2 class="section-title">🎯 Core Expertise</h2>
+            <h2 class="section-title">Core Expertise</h2>
             <div class="expertise-grid">
                 <div class="expertise-card">
-                    <div class="expertise-icon">🤖</div>
+                    <div class="expertise-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                    </div>
                     <h3>Robotic Surgery Systems</h3>
-                    <p>3+ years at Intuitive Surgical specializing in da Vinci robotic system maintenance, diagnostics, and quality compliance with GDP standards. Expert in the world's most advanced surgical robotics platform.</p>
+                    <p>3+ years at Intuitive Surgical specializing in da Vinci robotic system maintenance, diagnostics, and quality compliance with GDP standards.</p>
                 </div>
                 <div class="expertise-card">
-                    <div class="expertise-icon">🔧</div>
+                    <div class="expertise-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4zM6.7 8.8c-.7.7-1.9.7-2.6 0-.7-.7-.7-1.9 0-2.6.7-.7 1.9-.7 2.6 0 .7.7.7 1.9 0 2.6z"/>
+                        </svg>
+                    </div>
                     <h3>Technical Maintenance & Repair</h3>
-                    <p>Expert in complex electronic and electro-mechanical components across multiple medical device platforms. Improved equipment issue localization efficiency by 25% through streamlined diagnostics.</p>
+                    <p>Expert in complex electronic and electro-mechanical components. Improved equipment issue localization efficiency by 25% through streamlined diagnostics.</p>
                 </div>
                 <div class="expertise-card">
-                    <div class="expertise-icon">📋</div>
+                    <div class="expertise-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                        </svg>
+                    </div>
                     <h3>Quality Compliance & GDP</h3>
-                    <p>Implemented meticulous inspections increasing adherence to Good Distribution Practice (GDP) standards by 30% at Intuitive Surgical. Expertise in FDA-regulated medical device quality systems.</p>
+                    <p>Implemented meticulous inspections increasing adherence to Good Distribution Practice (GDP) standards by 30% at Intuitive Surgical.</p>
                 </div>
                 <div class="expertise-card">
-                    <div class="expertise-icon">🏥</div>
+                    <div class="expertise-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                        </svg>
+                    </div>
                     <h3>Multi-Company Medical Device Experience</h3>
-                    <p>Unique experience across 4 leading companies: Intuitive Surgical (robotic surgery), Alphatec Spine (startup environment), NuVasive (spine instruments), and Electrolux (manufacturing foundation). Adaptable to different company cultures and technologies.</p>
+                    <p>Diverse experience across leading companies: Intuitive Surgical (robotic surgery), Alphatec Spine (startup environment), and NuVasive (spine instruments). Adaptable to different company cultures and technologies.</p>
                 </div>
                 <div class="expertise-card">
-                    <div class="expertise-icon">🚀</div>
-                    <h3>Startup Environment Expertise</h3>
-                    <p>Contributed to Alphatec Spine's Memphis facility startup, demonstrating ability to rapidly adapt, learn new systems, and make meaningful contributions in fast-paced, resource-constrained environments.</p>
+                    <div class="expertise-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/>
+                        </svg>
+                    </div>
+                    <h3>Statistical Process Control</h3>
+                    <p>Extensive experience with SPC procedures at Electrolux North America, managing reliability auditing and reducing testing cycle time by 15%.</p>
                 </div>
                 <div class="expertise-card">
-                    <div class="expertise-icon">🏭</div>
-                    <h3>Manufacturing Operations Foundation</h3>
-                    <p>Strong foundation in lean manufacturing, Statistical Process Control (SPC), 5S methodology, and production line quality control. 4+ years at Electrolux North America building core manufacturing expertise.</p>
+                    <div class="expertise-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </div>
+                    <h3>Manufacturing Operations</h3>
+                    <p>Strong foundation in lean manufacturing, 5S methodology, and production line quality control across medical device and appliance industries.</p>
                 </div>
             </div>
         </div>
@@ -909,32 +969,32 @@
 
     <section id="experience">
         <div class="container">
-            <h2 class="section-title">💼 Professional Experience</h2>
+            <h2 class="section-title">Professional Experience</h2>
             <div class="experience-timeline">
                 <div class="timeline-item">
                     <h3>Service Operations Technician II - Intuitive Surgical</h3>
                     <p><strong>February 2022 - Present | Southaven, Mississippi</strong></p>
-                    <p>Leading quality compliance and technical maintenance for da Vinci robotic surgery systems. Enhanced GDP standard adherence by 30% through meticulous inspection protocols. Streamlined diagnostic processes, improving equipment issue localization by 25%. Collaborate with cross-functional teams on complex electronic and electro-mechanical component maintenance, ensuring optimal system performance and reliability for life-saving surgical procedures.</p>
+                    <p>Leading quality compliance and technical maintenance for da Vinci robotic surgery systems. Enhanced GDP standard adherence by 30% through meticulous inspection protocols. Streamlined diagnostic processes, improving equipment issue localization by 25%. Collaborate with cross-functional teams on complex electronic and electro-mechanical component maintenance, ensuring optimal system performance and reliability.</p>
                 </div>
                 <div class="timeline-item">
                     <h3>Medical Device Technician - Alphatec Spine</h3>
                     <p><strong>2021 - 2022 | Memphis, Tennessee</strong></p>
-                    <p>Contributed to the startup of Alphatec's new Memphis manufacturing facility specializing in spine surgery instruments and implants. Gained hands-on experience with surgical instrument processing, sterilization protocols, and quality control procedures for spine surgery devices. Worked with precision surgical instruments and learned lean manufacturing processes in a dynamic startup environment. Demonstrated rapid learning ability and adaptability in a fast-paced, resource-constrained setting.</p>
+                    <p>Contributed to the startup of Alphatec's new Memphis manufacturing facility specializing in spine surgery instruments and implants. Gained experience with surgical instrument processing, sterilization protocols, and quality control procedures for spine surgery devices. Worked with precision surgical instruments and learned lean manufacturing processes in a startup environment.</p>
                 </div>
                 <div class="timeline-item">
                     <h3>Loaner Processing Technician - NuVasive</h3>
                     <p><strong>April 2018 - December 2021 | Greater Memphis Area</strong></p>
-                    <p>Managed comprehensive surgical instrument lifecycle including cleaning, decontamination, and sterilization protocols for spine surgery instruments. Optimized inventory management processes and implemented 5S methodologies, achieving 20% improvement in shipment accuracy. Ensured strict compliance with sterilization protocols, maintaining highest safety standards for surgical instruments used in critical spine surgery procedures.</p>
+                    <p>Managed comprehensive surgical instrument lifecycle including cleaning, decontamination, and sterilization protocols. Optimized inventory management processes and implemented 5S methodologies, achieving 20% improvement in shipment accuracy. Ensured strict compliance with sterilization protocols, maintaining highest safety standards for surgical instruments used in spine surgery procedures.</p>
                 </div>
                 <div class="timeline-item">
                     <h3>Reliability Lab Auditor - Electrolux North America</h3>
                     <p><strong>November 2013 - December 2017 | Greater Memphis Area</strong></p>
-                    <p>Managed reliability auditing processes using Statistical Process Control (SPC) procedures and quality tools. Collaborated with engineers to identify and resolve system errors, reducing testing cycle time by 15%. Implemented Corrective and Preventive Holds for defective units, ensuring product quality standards. Built foundational manufacturing expertise through hands-on production experience as press and paint booth operator.</p>
+                    <p>Managed reliability auditing processes using Statistical Process Control (SPC) procedures and quality tools. Collaborated with engineers to identify and resolve system errors, reducing testing cycle time by 15%. Implemented Corrective and Preventive Holds for defective units, ensuring product quality standards. Gained hands-on production experience as press and paint booth operator.</p>
                 </div>
                 <div class="timeline-item">
                     <h3>Senior Checker Sorter - FedEx Express</h3>
                     <p><strong>January 2000 - September 2012 | Memphis, Tennessee</strong></p>
-                    <p>Coordinated ground operations for aircraft loading/unloading, ensuring operational efficiency and safety. Led technical support for cargo handling employees, developing training programs and monitoring daily operations. Collaborated with cross-functional teams to streamline processes and improve communication across departments. Built strong foundation in logistics and operational excellence.</p>
+                    <p>Coordinated ground operations for aircraft loading/unloading, ensuring operational efficiency and safety. Led technical support for cargo handling employees, developing training programs and monitoring daily operations. Collaborated with cross-functional teams to streamline processes and improve communication across departments.</p>
                 </div>
             </div>
         </div>
@@ -942,18 +1002,18 @@
 
     <section id="manufacturing-foundation">
         <div class="container">
-            <h2 class="section-title">🏭 Manufacturing Foundation - Electrolux</h2>
+            <h2 class="section-title">Manufacturing Foundation - Electrolux</h2>
             <p style="text-align: center; font-size: 1.2rem; margin-bottom: 3rem; max-width: 800px; margin-left: auto; margin-right: auto;">
                 Marcus's 4+ years at Electrolux North America provided the foundational manufacturing expertise that enabled his successful transition to medical devices.
             </p>
             
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; margin-bottom: 3rem;">
                 <div>
-                    <h3 style="font-size: 1.8rem; margin-bottom: 1rem; color: #2c3e50;">⚙️ Reliability Lab Auditor Experience</h3>
+                    <h3 style="font-size: 1.8rem; margin-bottom: 1rem; color: #2c3e50;">Reliability Lab Auditor Experience</h3>
                     <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem;">At Electrolux North America, Marcus mastered Statistical Process Control (SPC) procedures and quality tools while managing reliability auditing processes. He collaborated with engineers to identify system errors, reducing testing cycle time by 15% and ensuring production line processes remained in control.</p>
                     
                     <div style="background: #f8f9fa; padding: 2rem; border-radius: 10px; border-left: 4px solid #667eea; margin-bottom: 1.5rem;">
-                        <h4 style="margin-bottom: 1rem; color: #2c3e50;">🎯 Key Achievements</h4>
+                        <h4 style="margin-bottom: 1rem; color: #2c3e50;">Key Achievements</h4>
                         <ul style="margin: 0; padding-left: 1.5rem;">
                             <li>15% reduction in testing cycle time through process optimization</li>
                             <li>Implemented Corrective and Preventive Holds for quality control</li>
@@ -972,7 +1032,7 @@
             </div>
             
             <div class="highlight-box">
-                <h3 style="font-size: 1.8rem; margin-bottom: 1rem;">🏆 Manufacturing Excellence Foundation</h3>
+                <h3 style="font-size: 1.8rem; margin-bottom: 1rem;">Manufacturing Excellence Foundation</h3>
                 <p style="font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.9;">The quality systems, process improvement mindset, and team collaboration skills developed at Electrolux became the foundation for Marcus's success in increasingly sophisticated medical device environments.</p>
                 <div class="stats-grid">
                     <div class="stat-item">
@@ -992,86 +1052,9 @@
         </div>
     </section>
 
-    <section id="alphatec-startup" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+    <section id="nuvasive-work" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
         <div class="container">
-            <h2 class="section-title">🚀 Alphatec Spine Startup Experience</h2>
-            <div class="startup-badge">STARTUP ENVIRONMENT</div>
-            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 3rem; max-width: 800px; margin-left: auto; margin-right: auto;">
-                Marcus contributed to Alphatec Spine's Memphis facility startup, demonstrating exceptional adaptability and rapid learning in a fast-paced startup environment. Even in just 4 months, he made meaningful contributions to establishing spine surgery instrument processing operations.
-            </p>
-            
-            <div class="photo-grid">
-                <div class="photo-card">
-                    <img src="IMG_20210831_201437_098.jpg" alt="Marcus processing spine surgery instrument sets at Alphatec">
-                    <div class="photo-card-content">
-                        <h4>🔧 Precision Instrument Processing</h4>
-                        <p>Working with complex spine surgery instrument sets, ensuring each component meets strict quality standards for surgical procedures. Demonstrates attention to detail and understanding of surgical instrument requirements.</p>
-                    </div>
-                </div>
-                
-                <div class="photo-card">
-                    <img src="InShot_20210916_175459227.jpg" alt="Alphatec facility operations and sterilization equipment">
-                    <div class="photo-card-content">
-                        <h4>🏥 Facility Startup Operations</h4>
-                        <p>Contributing to the establishment of Alphatec's Memphis manufacturing facility, including sterilization protocols and quality control procedures. Shows ability to quickly integrate into new environments and contribute to startup success.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div style="margin: 4rem 0; padding: 3rem; background: white; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                <h3 style="font-size: 1.8rem; margin-bottom: 2rem; color: #2c3e50; text-align: center;">💡 Startup Environment Skills</h3>
-                
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
-                    <div style="text-align: center; padding: 1.5rem;">
-                        <div style="font-size: 2rem; margin-bottom: 1rem;">⚡</div>
-                        <h4 style="margin-bottom: 1rem; color: #667eea;">Rapid Adaptation</h4>
-                        <p>Quickly learned new systems, processes, and quality standards in a dynamic startup environment</p>
-                    </div>
-                    
-                    <div style="text-align: center; padding: 1.5rem;">
-                        <div style="font-size: 2rem; margin-bottom: 1rem;">🎯</div>
-                        <h4 style="margin-bottom: 1rem; color: #667eea;">Immediate Impact</h4>
-                        <p>Made meaningful contributions to facility operations and quality processes within months</p>
-                    </div>
-                    
-                    <div style="text-align: center; padding: 1.5rem;">
-                        <div style="font-size: 2rem; margin-bottom: 1rem;">🔄</div>
-                        <h4 style="margin-bottom: 1rem; color: #667eea;">Process Flexibility</h4>
-                        <p>Adapted to changing requirements and evolving procedures typical of startup environments</p>
-                    </div>
-                    
-                    <div style="text-align: center; padding: 1.5rem;">
-                        <div style="font-size: 2rem; margin-bottom: 1rem;">🤝</div>
-                        <h4 style="margin-bottom: 1rem; color: #667eea;">Team Integration</h4>
-                        <p>Successfully integrated with startup team culture and contributed to collaborative problem-solving</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="highlight-box">
-                <h3 style="font-size: 1.8rem; margin-bottom: 1rem;">🌟 Startup Success Story</h3>
-                <p style="font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.9;">Marcus's experience at Alphatec demonstrates his ability to quickly adapt to new environments, learn complex systems, and contribute meaningfully even in short-term roles. This startup experience showcases entrepreneurial mindset and flexibility highly valued in dynamic medical device companies.</p>
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <div class="stat-number">4</div>
-                        <div>Months Rapid Contribution</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">100%</div>
-                        <div>Quality Standards Met</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">STARTUP</div>
-                        <div>Environment Expertise</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="nuvasive-work">
-        <div class="container">
-            <h2 class="section-title">🦴 NuVasive Spine Surgery Experience</h2>
+            <h2 class="section-title">NuVasive Spine Surgery Experience</h2>
             <p style="text-align: center; font-size: 1.2rem; margin-bottom: 3rem; max-width: 800px; margin-left: auto; margin-right: auto;">
                 Marcus's 4+ years at NuVasive involved precision handling of spine surgery instruments, ensuring the highest standards of safety and quality for critical surgical procedures.
             </p>
@@ -1080,7 +1063,7 @@
                 <div style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
                     <img src="nuvasive-precision.jpg" alt="Marcus performing precision instrument handling" style="width: 100%; height: 250px; object-fit: cover;">
                     <div style="padding: 1.5rem;">
-                        <h3 style="margin-bottom: 1rem;">🔬 Precision Instrument Handling</h3>
+                        <h3 style="margin-bottom: 1rem;">Precision Instrument Handling</h3>
                         <p>Expert processing of complex spine surgery instruments with meticulous attention to detail and safety protocols</p>
                     </div>
                 </div>
@@ -1088,14 +1071,14 @@
                 <div style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
                     <img src="nuvasive-skeleton.jpg" alt="Marcus with anatomical model" style="width: 100%; height: 250px; object-fit: cover;">
                     <div style="padding: 1.5rem;">
-                        <h3 style="margin-bottom: 1rem;">🦴 Anatomical Knowledge</h3>
+                        <h3 style="margin-bottom: 1rem;">Anatomical Knowledge</h3>
                         <p>Deep understanding of spinal anatomy and how surgical instruments interact with patient anatomy</p>
                     </div>
                 </div>
             </div>
             
             <div class="highlight-box">
-                <h3 style="font-size: 1.8rem; margin-bottom: 1rem;">🏆 Spine Surgery Instrument Expertise</h3>
+                <h3 style="font-size: 1.8rem; margin-bottom: 1rem;">Spine Surgery Instrument Expertise</h3>
                 <p style="font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.9;">4+ years ensuring critical spine surgery instruments meet the highest standards of safety and precision. Working with NuVasive's "Creative Spine Technology" to enable life-changing surgical procedures.</p>
                 <div class="stats-grid">
                     <div class="stat-item">
@@ -1115,9 +1098,55 @@
         </div>
     </section>
 
+    <section id="alphatec-work" class="alphatec-section">
+        <div class="container">
+            <h2 class="section-title">Alphatec Spine Manufacturing Experience</h2>
+            <p class="alphatec-intro">
+                Marcus played a key role in the startup of Alphatec's new Memphis manufacturing facility, specializing in advanced spine surgery instruments and implants. His experience in this dynamic startup environment showcased his adaptability and expertise in precision medical device manufacturing.
+            </p>
+            
+            <div class="alphatec-gallery">
+                <div class="alphatec-photo-card">
+                    <img src="IMG_20210831_201437_098.jpg" alt="Marcus working with Alphatec spine surgery instruments" style="width: 100%; height: 300px; object-fit: cover;">
+                    <div class="card-content">
+                        <h3>Precision Instrument Processing</h3>
+                        <p>Working with Alphatec's advanced spine surgery instrument sets, ensuring each component meets the highest standards for surgical precision and patient safety.</p>
+                    </div>
+                </div>
+                
+                <div class="alphatec-photo-card">
+                    <img src="InShot_20210916_175459227.jpg" alt="Marcus in Alphatec manufacturing facility with sterilization equipment" style="width: 100%; height: 300px; object-fit: cover;">
+                    <div class="card-content">
+                        <h3>Sterilization & Quality Control</h3>
+                        <p>Operating advanced sterilization equipment and implementing quality control procedures in Alphatec's state-of-the-art Memphis facility.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="alphatec-highlight">
+                <h3>Startup Manufacturing Excellence</h3>
+                <p>Contributing to the establishment of Alphatec's Memphis facility from the ground up, implementing lean manufacturing processes and quality systems for spine surgery devices in a fast-paced startup environment.</p>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">Startup</div>
+                        <div>Facility Launch Experience</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">Spine</div>
+                        <div>Surgery Instruments Focus</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">Lean</div>
+                        <div>Manufacturing Processes</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="intuitive-work">
         <div class="container">
-            <h2 class="section-title">🤖 Hands-On Experience at Intuitive Surgical</h2>
+            <h2 class="section-title">Hands-On Experience at Intuitive Surgical</h2>
             <p style="text-align: center; font-size: 1.2rem; margin-bottom: 3rem; max-width: 800px; margin-left: auto; margin-right: auto;">
                 Marcus's daily work involves maintaining and servicing the world's most advanced robotic surgical systems, ensuring optimal performance for life-saving procedures.
             </p>
@@ -1126,7 +1155,7 @@
                 <div style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
                     <img src="intuitive-manufacturing.jpg" alt="Marcus in Intuitive manufacturing facility" style="width: 100%; height: 250px; object-fit: cover;">
                     <div style="padding: 1.5rem;">
-                        <h3 style="margin-bottom: 1rem;">🏭 Manufacturing Facility Operations</h3>
+                        <h3 style="margin-bottom: 1rem;">Manufacturing Facility Operations</h3>
                         <p>Working in Intuitive's world-class production facility with complete da Vinci surgical systems</p>
                     </div>
                 </div>
@@ -1134,14 +1163,14 @@
                 <div style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
                     <img src="intuitive-career-fair.jpg" alt="Intuitive career fair booth setup" style="width: 100%; height: 250px; object-fit: cover;">
                     <div style="padding: 1.5rem;">
-                        <h3 style="margin-bottom: 1rem;">🎓 Professional Booth Setup</h3>
+                        <h3 style="margin-bottom: 1rem;">Professional Booth Setup</h3>
                         <p>Complete da Vinci system display at Landers Center career fair for high school students</p>
                     </div>
                 </div>
             </div>
             
             <div class="highlight-box">
-                <h3 style="font-size: 1.8rem; margin-bottom: 1rem;">🚀 Robotic Surgery Excellence</h3>
+                <h3 style="font-size: 1.8rem; margin-bottom: 1rem;">Robotic Surgery Excellence</h3>
                 <p style="font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.9;">Over 3 years of experience maintaining the world's most advanced surgical robotics platform, ensuring life-saving procedures can be performed with precision and reliability.</p>
                 <div class="stats-grid">
                     <div class="stat-item">
@@ -1163,15 +1192,15 @@
 
     <section id="leadership" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
         <div class="container">
-            <h2 class="section-title">🌟 Professional Development & Community Leadership</h2>
+            <h2 class="section-title">Professional Development & Community Leadership</h2>
             
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; margin-top: 3rem; margin-bottom: 4rem;">
                 <div>
-                    <h3 style="font-size: 1.8rem; margin-bottom: 1rem; color: #2c3e50;">🎯 Leadership Memphis Program</h3>
+                    <h3 style="font-size: 1.8rem; margin-bottom: 1rem; color: #2c3e50;">Leadership Memphis Program</h3>
                     <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem;">Active participant in Leadership Memphis, a premier professional development program that connects emerging leaders across the Memphis business community. This program focuses on developing leadership skills, understanding community challenges, and building networks that drive positive change in the region.</p>
                     
                     <div style="background: #f8f9fa; padding: 2rem; border-radius: 10px; border-left: 4px solid #667eea;">
-                        <h4 style="margin-bottom: 1rem; color: #2c3e50;">🤝 Community Engagement</h4>
+                        <h4 style="margin-bottom: 1rem; color: #2c3e50;">Community Engagement</h4>
                         <p>Demonstrates commitment to professional growth and community involvement beyond technical expertise. Memphis is a major medical device and logistics hub, making local business connections valuable for industry collaboration and innovation.</p>
                     </div>
                 </div>
@@ -1182,15 +1211,15 @@
             </div>
             
             <div style="margin: 4rem 0; padding: 3rem; background: white; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                <h3 style="font-size: 1.8rem; margin-bottom: 2rem; color: #2c3e50; text-align: center;">🎓 STEM Education & Community Outreach</h3>
+                <h3 style="font-size: 1.8rem; margin-bottom: 2rem; color: #2c3e50; text-align: center;">STEM Education & Community Outreach</h3>
                 
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
                     <div>
-                        <h4 style="font-size: 1.4rem; margin-bottom: 1rem; color: #667eea;">🚀 High School Career Fair Representative</h4>
+                        <h4 style="font-size: 1.4rem; margin-bottom: 1rem; color: #667eea;">High School Career Fair Representative</h4>
                         <p style="margin-bottom: 1.5rem; line-height: 1.7;">Marcus represents Intuitive Surgical at regional career fairs, inspiring the next generation of STEM professionals. Working alongside colleagues, he demonstrates da Vinci robotic systems to high school students, showcasing career opportunities in medical device technology.</p>
                         
                         <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #667eea;">
-                            <strong>🎯 Impact:</strong> Directly mentoring future medical device professionals and promoting STEM education in the Memphis area, building the talent pipeline for the medical technology industry.
+                            <strong>Impact:</strong> Directly mentoring future medical device professionals and promoting STEM education in the Memphis area, building the talent pipeline for the medical technology industry.
                         </div>
                     </div>
                     
@@ -1205,10 +1234,10 @@
 
     <section id="contact">
         <div class="container">
-            <h2 class="section-title">📞 Get In Touch</h2>
+            <h2 class="section-title">Get In Touch</h2>
             <div style="text-align: center; margin-bottom: 3rem;">
-                <p style="font-size: 1.2rem; margin-bottom: 1rem;"><strong>📍 Memphis Metropolitan Area, Tennessee</strong></p>
-                <p style="font-size: 1.1rem; margin-bottom: 2rem;">🚀 Ready for new opportunities and exciting challenges</p>
+                <p style="font-size: 1.2rem; margin-bottom: 1rem;"><strong>Memphis Metropolitan Area, Tennessee</strong></p>
+                <p style="font-size: 1.1rem; margin-bottom: 2rem;">Ready for new opportunities and exciting challenges</p>
                 <div style="margin-top: 1.5rem;">
                     <a href="https://www.kickresume.com/cv/marcus-faulkner/" target="_blank" class="download-resume-btn">📄 Download Resume</a>
                 </div>
@@ -1230,7 +1259,7 @@
                     <label for="message">Message</label>
                     <textarea id="message" name="message" rows="5" placeholder="Tell me about your opportunity or project..." required></textarea>
                 </div>
-                <button type="submit" class="submit-btn">🚀 Send Message</button>
+                <button type="submit" class="submit-btn">Send Message</button>
             </form>
         </div>
     </section>
@@ -1238,7 +1267,7 @@
     <footer>
         <div class="container">
             <p>&copy; 2025 Marcus Faulkner. Service Operations Technician II | Medical Device Specialist</p>
-            <p style="margin-top: 0.5rem; font-size: 0.9rem;">🎓 BS Information Systems & Cybersecurity | 🏭 Manufacturing Certifications | ⚡ OSHA Certified</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem;">BS Information Systems & Cybersecurity | Manufacturing Certifications | OSHA Certified</p>
         </div>
     </footer>
 
@@ -1272,7 +1301,7 @@
             // Add success animation
             const submitBtn = this.querySelector('.submit-btn');
             const originalText = submitBtn.textContent;
-            submitBtn.textContent = '✅ Message Sent!';
+            submitBtn.textContent = 'Message Sent! ✓';
             submitBtn.style.background = 'linear-gradient(45deg, #28a745, #20c997)';
             
             setTimeout(() => {
@@ -1299,7 +1328,7 @@
         }, observerOptions);
 
         // Initialize scroll animations
-        document.querySelectorAll('.expertise-card, .timeline-item, .photo-card').forEach(el => {
+        document.querySelectorAll('.expertise-card, .timeline-item, .alphatec-photo-card').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(30px)';
             observer.observe(el);
@@ -1328,10 +1357,26 @@
             }
         });
 
+        // Add typing effect to hero text (optional enhancement)
+        function typeWriter(element, text, speed = 100) {
+            let i = 0;
+            element.innerHTML = '';
+            
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            
+            type();
+        }
+
         // Initialize enhanced interactions
         document.addEventListener('DOMContentLoaded', function() {
-            // Add stagger animation to cards
-            const cards = document.querySelectorAll('.expertise-card, .photo-card');
+            // Add stagger animation to expertise cards
+            const cards = document.querySelectorAll('.expertise-card');
             cards.forEach((card, index) => {
                 card.style.animationDelay = `${index * 0.1}s`;
             });
