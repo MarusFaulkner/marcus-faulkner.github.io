@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcus Faulkner - Operations Excellence Professional</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto 30px;
+            border: 5px solid rgba(255,255,255,0.3);
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .tagline {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #ecf0f1;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #bdc3c7;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #7f8c8d;
+            margin-bottom: 60px;
+        }
+
+        /* Experience Timeline */
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #3498db;
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 50px;
+            width: 50%;
+            padding: 20px;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            text-align: right;
+            padding-right: 40px;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            text-align: left;
+            padding-left: 40px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #3498db;
+            border-radius: 50%;
+            top: 30px;
+            right: -10px;
+            border: 3px solid white;
+        }
+
+        .timeline-item:nth-child(even)::before {
+            left: -10px;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .company-name {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .job-period {
+            color: #3498db;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .job-location {
+            color: #7f8c8d;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .job-description {
+            color: #555;
+            line-height: 1.7;
+        }
+
+        /* Portfolio Grid */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .portfolio-item {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .portfolio-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .portfolio-content {
+            padding: 25px;
+        }
+
+        .portfolio-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .portfolio-description {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Community Section */
+        .community-section {
+            background: #ecf0f1;
+        }
+
+        .community-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .community-item {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .community-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.2rem;
+            }
+
+            .tagline {
+                font-size: 1.1rem;
+            }
+
+            .timeline::before {
+                left: 30px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                left: 0 !important;
+                text-align: left !important;
+                padding-left: 70px !important;
+                padding-right: 20px !important;
+            }
+
+            .timeline-item::before {
+                left: 20px !important;
+                right: auto !important;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-img {
+                width: 150px;
+                height: 150px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .header {
+                padding: 60px 0;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <img src="marcus-headshot.jpg" alt="Marcus Faulkner" class="profile-img">
+            <h1>Marcus Faulkner</h1>
+            <p class="tagline">3+ Years at Intuitive Surgical (Feb 2022 - Jun 2025) • Service Operations Excellence • Quality Compliance Expert</p>
+            <p class="subtitle">Proven track record in robotic surgery systems, surgical instruments, and manufacturing operations</p>
+        </div>
+    </header>
+
+    <!-- Professional Experience Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+            <p class="section-subtitle">Building Excellence in Operations and Quality Compliance</p>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3 class="company-name">Intuitive Surgical</h3>
+                        <p class="job-period">February 2022 - June 30, 2025</p>
+                        <p class="job-location">Southaven, Mississippi</p>
+                        <p class="job-description">Leading quality compliance and technical maintenance for da Vinci robotic surgery systems. Enhanced GDP standard adherence by 30% and streamlined diagnostic processes, improving equipment issue localization by 25%.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3 class="company-name">Alphatec Spine</h3>
+                        <p class="job-period">2021 - 2022</p>
+                        <p class="job-location">Memphis, Tennessee</p>
+                        <p class="job-description">Startup manufacturing facility for spine surgery instruments. Specialized in surgical instrument processing, sterilization protocols, and quality control systems.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3 class="company-name">NuVasive</h3>
+                        <p class="job-period">April 2018 - December 2021</p>
+                        <p class="job-location">Greater Memphis Area</p>
+                        <p class="job-description">Surgical instrument lifecycle management with 20% improvement in shipment accuracy through 5S methodologies. Expert in spine surgery instrument sterilization protocols.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3 class="company-name">Electrolux North America</h3>
+                        <p class="job-period">November 2013 - December 2017</p>
+                        <p class="job-location">Greater Memphis Area</p>
+                        <p class="job-description">Statistical Process Control (SPC) procedures with 15% reduction in testing cycle time. Production experience as press and paint booth operator.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3 class="company-name">FedEx</h3>
+                        <p class="job-period">January 2000 - September 2012</p>
+                        <p class="job-location">Memphis, Tennessee</p>
+                        <p class="job-description">Ground operations coordination with focus on technical support and training programs. Extensive logistics and operational excellence experience.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="section" style="background: white;">
+        <div class="container">
+            <h2 class="section-title">Professional Portfolio</h2>
+            <p class="section-subtitle">Showcasing Excellence in Medical Device Operations</p>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="intuitive-manufacturing.jpg" alt="Intuitive Surgical Manufacturing" class="portfolio-img">
+                    <div class="portfolio-content">
+                        <h3 class="portfolio-title">Intuitive Surgical Operations</h3>
+                        <p class="portfolio-description">Leading quality compliance and technical maintenance for da Vinci robotic surgery systems with measurable improvements in GDP standards.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <img src="intuitive-career-fair.jpg" alt="Intuitive Career Fair" class="portfolio-img">
+                    <div class="portfolio-content">
+                        <h3 class="portfolio-title">Career Fair Representation</h3>
+                        <p class="portfolio-description">Representing Intuitive Surgical at career fairs, demonstrating da Vinci system capabilities and attracting top talent.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <img src="nuvasive-precision.jpg" alt="NuVasive Precision Work" class="portfolio-img">
+                    <div class="portfolio-content">
+                        <h3 class="portfolio-title">NuVasive Precision Operations</h3>
+                        <p class="portfolio-description">Surgical instrument lifecycle management with 20% improvement in shipment accuracy through 5S methodologies.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <img src="nuvasive-skeleton.jpg" alt="NuVasive Spine Surgery" class="portfolio-img">
+                    <div class="portfolio-content">
+                        <h3 class="portfolio-title">Spine Surgery Expertise</h3>
+                        <p class="portfolio-description">Specialized knowledge in spine surgery instrument sterilization protocols and quality assurance.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <img src="alphatec.jpg" alt="Alphatec Operations" class="portfolio-img">
+                    <div class="portfolio-content">
+                        <h3 class="portfolio-title">Alphatec Startup Experience</h3>
+                        <p class="portfolio-description">Building quality systems from the ground up in a startup manufacturing environment for spine surgery instruments.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <img src="alphatec-sterile.jpg" alt="Alphatec Sterile Environment" class="portfolio-img">
+                    <div class="portfolio-content">
+                        <h3 class="portfolio-title">Sterile Processing Excellence</h3>
+                        <p class="portfolio-description">Expert implementation of sterilization protocols and contamination control in surgical instrument manufacturing.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <img src="electrolux-team.jpg" alt="Electrolux Team" class="portfolio-img">
+                    <div class="portfolio-content">
+                        <h3 class="portfolio-title">Manufacturing Excellence</h3>
+                        <p class="portfolio-description">Statistical Process Control implementation with 15% reduction in testing cycle time at Electrolux North America.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <img src="leadership-memphis.jpg" alt="Leadership Memphis" class="portfolio-img">
+                    <div class="portfolio-content">
+                        <h3 class="portfolio-title">Leadership Development</h3>
+                        <p class="portfolio-description">Participating in Leadership Memphis to develop community leadership skills and professional network.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Involvement Section -->
+    <section class="section community-section">
+        <div class="container">
+            <h2 class="section-title">Community Involvement</h2>
+            <p class="section-subtitle">Giving Back Through Service and Leadership</p>
+            
+            <div class="community-grid">
+                <div class="community-item">
+                    <img src="st-jude-community.jpg" alt="St. Jude Community Service" class="community-img">
+                    <h3 class="portfolio-title">St. Jude Children's Research Hospital</h3>
+                    <p class="portfolio-description">Dedicated volunteer supporting the mission to advance cures and means of prevention for pediatric catastrophic diseases through research and treatment.</p>
+                </div>
+
+                <div class="community-item">
+                    <img src="st-jude-build.jpg" alt="St. Jude Build Project" class="community-img">
+                    <h3 class="portfolio-title">Community Build Projects</h3>
+                    <p class="portfolio-description">Hands-on participation in community building initiatives, applying operational excellence skills to support local charitable organizations.</p>
+                </div>
+
+                <div class="community-item">
+                    <img src="st-jude-copy.jpg" alt="St. Jude Event" class="community-img">
+                    <h3 class="portfolio-title">Fundraising & Events</h3>
+                    <p class="portfolio-description">Active participant in St. Jude fundraising events, combining professional network and operational skills to support life-saving research.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" style="background: #34495e; color: white;">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Let's Connect</h2>
+            <p class="section-subtitle" style="color: #bdc3c7;">Ready to bring proven operational excellence to your organization</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px; text-align: center;">
+                <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 10px;">
+                    <div style="font-size: 2rem; margin-bottom: 15px;">📧</div>
+                    <h3 style="margin-bottom: 10px;">Email</h3>
+                    <p style="color: #ecf0f1;">faulkmar@yahoo.com</p>
+                    <p style="font-size: 0.9rem; color: #bdc3c7; margin-top: 5px;">Professional inquiries welcome</p>
+                </div>
+                
+                <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 10px;">
+                    <div style="font-size: 2rem; margin-bottom: 15px;">📞</div>
+                    <h3 style="margin-bottom: 10px;">Phone</h3>
+                    <p style="color: #ecf0f1;">(901) 652-3407</p>
+                    <p style="font-size: 0.9rem; color: #bdc3c7; margin-top: 5px;">Available for interviews</p>
+                </div>
+                
+                <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 10px;">
+                    <div style="font-size: 2rem; margin-bottom: 15px;">🌎</div>
+                    <h3 style="margin-bottom: 10px;">Location</h3>
+                    <p style="color: #ecf0f1;">Memphis, Tennessee</p>
+                    <p style="font-size: 0.9rem; color: #bdc3c7; margin-top: 5px;">Open to relocation</p>
+                </div>
+                
+                <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 10px;">
+                    <div style="font-size: 2rem; margin-bottom: 15px;">💼</div>
+                    <h3 style="margin-bottom: 10px;">LinkedIn</h3>
+                    <p style="color: #ecf0f1;">linkedin.com/in/marcus-f-0a622b70</p>
+                    <p style="font-size: 0.9rem; color: #bdc3c7; margin-top: 5px;">Professional network</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: #2c3e50; color: white; padding: 30px 0; text-align: center;">
+        <div class="container">
+            <p style="color: #bdc3c7;">© 2025 Marcus Faulkner | Operations Excellence Professional | Quality Compliance Expert</p>
+        </div>
+    </footer>
+</body>
+</html>
